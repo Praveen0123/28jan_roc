@@ -1,0 +1,18 @@
+@import 'common';
+
+:host {
+  display: inline-block;
+  margin : rem-calc(20)
+}
+
+.header {
+  flex: 0 1 rem-calc(120);
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.footer {
+  flex: 0 1 rem-calc(25);
+}

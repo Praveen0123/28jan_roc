@@ -1,0 +1,64 @@
+<section class="flex"
+         [class]="progressStyle">
+
+
+  <div class="flex-shrink">
+
+    <div class="circle"></div>
+    <div class="vertical-line"></div>
+
+  </div>
+
+
+  <div class="flex-auto p-6 mb-10 ml-4 shadow">
+
+    <!-- Version Name -->
+    <span class="text-base font-bold"> {{releaseScheduleModel.versionName}} </span>
+
+    <!-- Version Description -->
+    <section class="flex p-1 space-x-2">
+
+      <ul class="ml-5 list-disc">
+
+        <li *ngFor="let description of releaseScheduleModel.versionDescription">
+          <span class="text-xs"> {{description}} </span>
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- Horizaontal Line -->
+    <div class="mt-2 mb-2 border-t-2"></div>
+
+    <!-- Version : Footer Section -->
+    <section class="flex justify-between mt-4 text-xs">
+
+      <div>
+
+        <span class="px-3 py-1 text-white rounded-md version-status">
+          {{releaseScheduleModel.versionStatus}}
+        </span>
+
+      </div>
+
+      <div>
+
+        <!-- Version : Release Date for Completed Status -->
+        <span *ngIf="releaseScheduleModel.versionStatus === 'Completed'">
+          Released: {{releaseScheduleModel.versionDate}}
+        </span>
+
+        <!-- Version : Expected Release date for In Progress or Planned Status -->
+        <span *ngIf="releaseScheduleModel.versionStatus === 'In Progress' || releaseScheduleModel.versionStatus === 'Planned'">
+          Expected Release Date: {{releaseScheduleModel.versionDate}}
+        </span>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+</section>

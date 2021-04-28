@@ -1,0 +1,62 @@
+<form [formGroup]="formGroup">
+  <h1 mat-dialog-title>Pease enter new name</h1>
+
+  <div mat-dialog-content
+       class="my-3">
+
+    <mat-form-field class="w-full">
+      <mat-label>Name</mat-label>
+
+      <input matInput
+             type="text"
+             formControlName="name">
+
+      <a *ngIf="formGroup.controls.name.value"
+         matSuffix
+         mat-icon-button
+         aria-label="Clear"
+         (click)="clearNameValue()">
+        <mat-icon>close</mat-icon>
+      </a>
+
+    </mat-form-field>
+
+  </div>
+
+
+  <div mat-dialog-actions>
+
+    <section class="flex justify-between w-full">
+
+      <div class="flex-1">
+
+        <roc-button-with-icon [fontSet]="'fas'"
+                              [fontIcon]="'times'"
+                              title='Cancel'
+                              (onClick)="onCancelClick()"></roc-button-with-icon>
+
+      </div>
+
+      <div class="flex-auto text-right">
+
+        <roc-button-with-icon [fontSet]="'fas'"
+                              [fontIcon]="'pencil-alt'"
+                              title='Apply New Name!'
+                              (onClick)="onSaveClick()"></roc-button-with-icon>
+
+      </div>
+
+    </section>
+
+  </div>
+</form>
+
+<!--
+<p>
+  Form is: {{formGroup.valid ? 'Valid' : 'Invalid'}}
+</p>
+
+<pre>
+{{formGroup.value | json}}
+</pre>
+-->

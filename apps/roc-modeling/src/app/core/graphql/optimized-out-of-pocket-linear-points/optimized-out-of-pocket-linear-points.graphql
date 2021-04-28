@@ -1,0 +1,24 @@
+query optimizedOutOfPocketLinearPoints(
+  $netPriceByYear: [Float!]!
+  $numYears: Int!
+  $isTaxIndependent: Boolean!
+  $federalLoanInterest: Float!
+  $federalLoanYears: Float!
+  $privateLoanInterest: Float!
+  $privateLoanYears: Float!
+  $isEligibleForSubsidizedLoan: Boolean!
+) {
+  optimizedOutOfPocketLinearPoints(
+    netPriceByYear: $netPriceByYear
+    numYears: $numYears
+    isTaxIndependent: $isTaxIndependent
+    federalLoanInterest: $federalLoanInterest
+    federalLoanYears: $federalLoanYears
+    privateLoanInterest: $privateLoanInterest
+    privateLoanYears: $privateLoanYears
+    isEligibleForSubsidizedLoan: $isEligibleForSubsidizedLoan
+  ) {
+    x
+    y
+  }
+}

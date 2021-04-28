@@ -1,0 +1,18 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+::ng-deep {
+
+  .mat-button-toggle-label-content {
+    line-height: rem-calc(30) !important;
+    font-size  : rem-calc(13);
+  }
+}
+
+
+form {
+  width: rem-calc(350);
+}

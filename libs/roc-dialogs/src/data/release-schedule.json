@@ -1,0 +1,66 @@
+[
+  {
+    "versionName": "V.3",
+    "versionDescription": [
+      "Multi-language translation",
+      "Alumni outcomes by degree program updates",
+      "Personalized optimization 'nudges'",
+      "Selection mis-alignment messages",
+      "Part-time work optimization"
+    ],
+    "versionStatus": "Planned",
+    "versionDate": "3-15-2021"
+  },
+  {
+    "versionName": "V.2",
+    "versionDescription": [
+      "Loan payment plan by year",
+      "Refine Education Costs",
+      "Pell Grant eligiblity calculator",
+      "Subsidized loan eligiblity calculator",
+      "Standard and Income Based loan replayment toggle",
+      "Data refreshes",
+      "Small defect fixes",
+      "Performance improvements"
+    ],
+    "versionStatus": "In Progress",
+    "versionDate": "2-28-2021"
+  },
+  {
+    "versionName": "V0.1",
+    "versionDescription": [
+      "ROC Redesign based on counselor feedback",
+      "Emsi labor market data integration",
+      "About Tool page",
+      "Glossary page",
+      "Feedback form with Salesforce integration",
+      "Releases page",
+      "About the data page",
+      "Conact Us/Interest form with Salesforce integration",
+      "Contextualized information icons",
+      "Updated Return on Investment alogorithm",
+      "Loan repayment optimization plan algorithm",
+      "Time to graduate algorithm",
+      "Share models capability",
+      "Compare models capability",
+      "Advanced Careers Search page",
+      "Advanced Degree Search page",
+      "Advanced School Search page",
+      "AuthO integration",
+      "Couselor, student, parent roles"
+    ],
+    "versionStatus": "Completed",
+    "versionDate": "1-30-2021"
+  },
+  {
+    "versionName": "Beta",
+    "versionDescription": [
+      "ROC Proof of Concept Design",
+      "Datastop.io data store",
+      "Return on Investment Algorithm Development",
+      "Usability tests and design refinements"
+    ],
+    "versionStatus": "Completed",
+    "versionDate": "1-30-2020"
+  }
+]

@@ -1,0 +1,42 @@
+<ng-container *ngIf="{
+    collectionList: collectionList$ |async,
+    activeRoiAggregateId: activeRoiAggregateId$ |async,
+    collectionFilterType: collectionFilterType$ |async,
+    isSpinnerActive: isSpinnerActive$ |async
+  } as data">
+
+
+
+  <section class="container w-max">
+
+    <h2 class="my-10 text-4xl font-thin text-center text-gray-800">My Collections</h2>
+
+    <roc-search-filter [collectionFilterType]="data.collectionFilterType"
+                       (onRequestAllCollections)="onRequestAllCollections()"
+                       (onRequestCollectionsBySearchTermCollections)="onRequestCollectionsBySearchTermCollections($event)"
+                       (onRequestMostRecentCollections)="onRequestMostRecentCollections()"
+                       (onRequestSharedFromCollections)="onRequestSharedFromCollections()"
+                       (onRequestSharedWithCollections)="onRequestSharedWithCollections()"></roc-search-filter>
+
+  </section>
+
+
+  <section class="container w-full mt-5 text-center">
+
+    <ng-container *ngIf="(data.collectionList && data.collectionList.length > 0); else placeholder">
+      <roc-collection-card-list [collectionList]="data.collectionList"
+                                [activeRoiAggregateId]="data.activeRoiAggregateId"
+                                (onClickAggregate)="onClickAggregate($event)"></roc-collection-card-list>
+    </ng-container>
+
+  </section>
+
+  <ng-template #placeholder>
+
+    <div class="px-6 mt-20 text-3xl font-thin leading-4 text-gray-400"
+         *ngIf="!data.isSpinnerActive">No collections were found</div>
+
+  </ng-template>
+
+
+</ng-container>

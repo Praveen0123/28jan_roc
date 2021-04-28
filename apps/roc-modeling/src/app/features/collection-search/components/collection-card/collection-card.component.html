@@ -1,0 +1,65 @@
+<section class="relative w-64 border border-gray-300 h-80">
+
+  <span *ngIf="isActive"
+        class="transform -rotate-6 rounded px-2 py-1 absolute  text-xs text-white bg-blue-800 -top-1.5  -left-1.5">Active</span>
+
+  <section class="flex flex-col h-full">
+
+
+    <div class="absolute right-0 px-3 text-sm -top-3 bg-blue-50"
+         [innerHTML]="roiAggregateCardModel.modelCount | plural:'model'"></div>
+
+    <!-- NAME -->
+    <div class="bg-gray-200 cursor-pointer header"
+         (click)="onClickAggregate()">
+
+      <section class="grid h-full text-center place-content-center">
+        <h2 class="text-3xl font-thin">{{roiAggregateCardModel.roiAggregateName}}</h2>
+      </section>
+
+      <span class="pl-4 mb-12 text-xs text-gray-500">
+        last updated {{roiAggregateCardModel.updatedAt | timeago:false}}
+      </span>
+    </div>
+
+
+    <!-- LIST OF SCHOOLS -->
+    <div class="cursor-pointer content"
+         (click)="onClickAggregate()">
+
+      <ul class="mt-8 ml-8 text-left list-disc"
+          *ngIf="hasSelectedInstitutions; else placeholder">
+        <ng-container *ngFor="let item of roiAggregateCardModel.institutionList">
+          <li>
+
+            <span class="text-sm">
+              {{item.name}}
+            </span>
+
+          </li>
+        </ng-container>
+      </ul>
+
+    </div>
+
+
+    <!-- CTAs -->
+    <div class="text-center bg-gray-50 footer">
+
+      <roc-collection-call-to-action [roiAggregateId]="roiAggregateCardModel.roiAggregateId"
+                                     [roiAggregateName]="roiAggregateCardModel.roiAggregateName"
+                                     [isAddModelToAggregateAvailable]="false"></roc-collection-call-to-action>
+
+    </div>
+
+
+  </section>
+
+
+</section>
+
+
+
+<ng-template #placeholder>
+  <div class="px-6 mt-8 text-lg font-thin leading-4 text-gray-400">No institutions have been selected</div>
+</ng-template>

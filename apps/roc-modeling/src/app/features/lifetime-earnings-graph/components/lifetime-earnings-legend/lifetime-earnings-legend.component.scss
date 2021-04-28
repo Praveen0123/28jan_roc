@@ -1,0 +1,17 @@
+@import 'common';
+
+:host {
+  display: block;
+  width: rem-calc(696);
+
+  .dot-trail {
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:after {
+      font-size: 0.75rem;
+      font-weight: normal;
+      content: ' ..........................................................................................................................................................................................';
+    }
+  }
+}

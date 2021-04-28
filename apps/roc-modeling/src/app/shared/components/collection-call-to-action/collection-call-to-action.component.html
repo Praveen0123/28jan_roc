@@ -1,0 +1,41 @@
+<roc-button-with-icon [fontSet]="'fas'"
+                      [fontIcon]="'chevron-circle-down'"
+                      [matMenuTriggerFor]="menu">
+  things you can do...
+
+</roc-button-with-icon>
+
+<mat-menu #menu="matMenu">
+
+  <!-- COPY -->
+  <roc-button-with-icon [title]="'Copy collection to clipboard'"
+                        [fontSet]="'fal'"
+                        [fontIcon]="'copy'"
+                        (onClick)="onCopyRoiAggregateModel()"></roc-button-with-icon>
+
+
+  <!-- SHARE -->
+  <roc-button-with-icon [title]="'Share collection'"
+                        [fontSet]="'fas'"
+                        [fontIcon]="'share-square'"
+                        (onClick)="onShareClick()"></roc-button-with-icon>
+
+  <!-- SHARE -->
+  <roc-button-with-icon [title]="'View share history'"
+                        [fontSet]="'fas'"
+                        [fontIcon]="'share-square'"
+                        (onClick)="onViewShareHistoryClick()"></roc-button-with-icon>
+
+  <!-- ADD MODEL -->
+  <roc-button-with-icon *ngIf="isAddModelToAggregateAvailable"
+                        [title]="'Add model to collection'"
+                        [fontSet]="'fas'"
+                        [fontIcon]="'plus'"
+                        (onClick)="onAddNewModel()"></roc-button-with-icon>
+
+  <!-- DELETE COLLECTION -->
+  <roc-button-with-icon [title]="'delete collection'"
+                        [fontSet]="'fas'"
+                        [fontIcon]="'trash'"
+                        (onClick)="onDeleteCollection()"></roc-button-with-icon>
+</mat-menu>

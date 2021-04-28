@@ -1,0 +1,42 @@
+<section class="flex justify-end align-bottom">
+
+  <!-- MODEL NAME -->
+  <div class="flex-1">
+
+    <section class="flex items-center content-center">
+
+      <div class="flex-shrink">
+
+        <button mat-icon-button
+                (click)="onRename()">
+
+          <fa-icon class="text-sm"
+                   [icon]="['fas', 'pencil-alt']"></fa-icon>
+
+        </button>
+
+      </div>
+
+      <div class="flex-shrink">
+
+        <h3 class="pt-1 text-lg font-bold text-black uppercase">{{roiModelDto?.name}}</h3>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+
+  <!-- MODEL CTAs -->
+  <div class="flex-none">
+
+    <roc-button-with-icon title="Clone Model"
+                          fontSet="fas"
+                          fontIcon="clone"
+                          (onClick)="onCloneClick()"></roc-button-with-icon>
+
+  </div>
+
+</section>

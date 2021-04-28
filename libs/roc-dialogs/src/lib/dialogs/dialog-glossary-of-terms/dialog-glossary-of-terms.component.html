@@ -1,0 +1,18 @@
+<ng-container *ngIf="{
+    glossaryList: glossaryList$ | async
+  } as data">
+
+  <roc-lib-dialog-title [title]="'Glossary of Terms'"></roc-lib-dialog-title>
+
+
+  <mat-dialog-content>
+
+    <ng-container *ngFor="let item of data.glossaryList">
+
+      <roc-lib-glossary-term-item [glossaryTermModel]="item"></roc-lib-glossary-term-item>
+
+    </ng-container>
+
+  </mat-dialog-content>
+
+</ng-container>

@@ -1,0 +1,8 @@
+<ng-container *ngFor="let item of collectionList">
+
+  <roc-collection-card [roiAggregateCardModel]="item"
+                       [activeRoiAggregateId]="activeRoiAggregateId"
+                       (onClickAggregate)="onClickAggregate($event)"
+                       class="flex flex-wrap"></roc-collection-card>
+
+</ng-container>

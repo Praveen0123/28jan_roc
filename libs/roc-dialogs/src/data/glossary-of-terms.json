@@ -1,0 +1,222 @@
+  [
+    {
+      "term": "Acceptance Rate",
+      "definition": "The proportion of first-time students submitting an application to this school that were accepted for admission. An application is considered submitted only after all required portions of the application are complete. Applicants that do not submit a complete application are not included in the calculation of this rate. Institutions that have an open admissions policy do not report on their acceptance rate, but are considered to have a 100% acceptance rate for the purposes of searching on the Scorecard website."
+    },
+    {
+      "term": "ACT Score",
+      "definition": "ACT, previously known as the American College Testing program, measures educational development and readiness to pursue college-level coursework in English, mathematics, natural science, and social studies. Student performance does not reflect innate ability and is influenced by a student's educational preparedness."
+    },
+    {
+      "term": "Alignment with Degree Program",
+      "definition": "Represents the extent to which the career goal and degree program are related (e.g., a marine biology is closely related to being a amrine biologist). Choosing a major closely related to your featuew career may increase the likelihood you get a job in your desired career field or earn more."
+    },
+    {
+      "term": "Alumni Median Earnings",
+      "definition": "Amount of income between the highest paid 50 percent and the lowest paid 50 percent of graduates from the college or university."
+    },
+    {
+      "term": "Career Demand",
+      "definition": "Job openings resulting from employment growth and the need to replace workers who leave an occupation."
+    },
+    {
+      "term": "Career Goal",
+      "definition": "Job or type of work that you would like to do."
+    },
+    {
+      "term": "Career Growth",
+      "definition": "The opportunity to progress in the career field (i.e., your potential to advance and get promoted within this field.)"
+    },
+    {
+      "term": "Careers by Industry",
+      "definition": "Jobs offered by a group of businesses or organizations that produce similar products or provide similar services. For example, all businesses that manufacture automobiles are in the same industry."
+    },
+    {
+      "term": "Cost Breakdown",
+      "definition": "Provides a breakdown of the estimated cost of living (i.e., rent/mortgage, food, expenses) for this location to help determine if payments on student loans will be sustainable based on your career goal, education investment, and local cost of living."
+    },
+    {
+      "term": "Cost of Attendance",
+      "definition": "This is the estimated cost to attend this school for one academic year before financial aid is applied (sometimes it is broken out into Fall and Spring terms). Cost of attendance includes everything from fixed costs, like tuition, to variable costs, like personal expenses."
+    },
+    {
+      "term": "Degree Alignment with Career",
+      "definition": "Represents the extent to which the career goal and degree program are related (e.g., a marine biology major is closely related to being a marine biologist). Choosing a major closely related to your future career may increase the likelihood you get a job or earn more."
+    },
+    {
+      "term": "Degree Level",
+      "definition": "The typical level of education you will need for an occupation."
+    },
+    {
+      "term": "Degree Programs",
+      "definition": "Area of study leading to a degree."
+    },
+    {
+      "term": "Dependency Status",
+      "definition": "You are considered a dependent student unless you meet any one of these criteria:  Age 24 or older, Married or separated,  Have legal dependents other than a spouse (e.g., children), Active-duty military or veteran, Emancipated minor, foster child, or homeless."
+    },
+    {
+      "term": "Disposable Income",
+      "definition": "The amount of money that is left after paying all expenses such as food, rent or mortgage, transportation, and other loans, etc."
+    },
+    {
+      "term": "DoD Tuition Assistance Program Benefits",
+      "definition": "Department of Defense financial assistance to Service members for voluntary off-duty education programs in support of professional and personal self-development goals."
+    },
+    {
+      "term": "Education Level",
+      "definition": "The level of education that you will need for an occupation."
+    },
+    {
+      "term": "Entrance Exams",
+      "definition": "Standardized aptitude test that measures your aptitude in various areas such as verbal, math, analytical and writing skills."
+    },
+    {
+      "term": "Estimated Grants & Scholarships",
+      "definition": "Sometimes called gift aid, this is money awarded to you that you do not need to pay back. It can be awarded based solely on the financial situation of your family (i.e., grants), based on your academic and extracurricular achievements from high school (i.e., scholarships) or both. Gift aid may come from the federal or state government, the college, or outside private organizations."
+    },
+    {
+      "term": "Estimated Loans",
+      "definition": "This is money that you borrow and must pay back over time with interest. There are different types of loans that have different terms, so be sure to research the loans proposed in your award letter."
+    },
+    {
+      "term": "Estimated Net Price",
+      "definition": "Net Price is the Cost of Attendance of college (tuition, fees, room & board) minus any Grants and Scholarships."
+    },
+    {
+      "term": "Estimated years to complete degree",
+      "definition": "How many years you expect to be in college. The more years it takes to complete a degree, the higher the cost of college and the longer it takes to qualify for jobs that require a degree. ROC has defaulted this value using your selected college’s retention and graduation rates."
+    },
+    {
+      "term": "Expected Family Contribution (EFC)",
+      "definition": "The EFC is determined by the federal government based on your family's income, assets, and family size, as reported on the FAFSA. It is used to determine if you are eligible for federal financial aid (and how much). "
+    },
+    {
+      "term": "Family Income",
+      "definition": "The sum of the income of all family members 15 years and older living in the household. Families are groups of two or more people (one of whom is the householder) related by birth, marriage, or adoption and residing together; all such people (including related subfamily members) are considered as members of one family."
+    },
+    {
+      "term": "Federal Grant",
+      "definition": "These are need-based awards, the most common of which is the Pell Grant. You’ll need to complete the FAFSA to see if you qualify. Fill out your FAFSA starting Oct 1 of your senior year to see if you qualify for financial aid. Check out fafsa.ed.gov for deadlines."
+    },
+    {
+      "term": "Federal Loan",
+      "definition": "This is the maximum amount you can borrow from the Federal Government based on your dependency status.  Federal loans are preferred to private loans (e.g., from a bank) because they have a lower interest rate, flexible repayment plans, and offer many borrower protections. By default, ROC assumes students maximize federal loans before using any private loans."
+    },
+    {
+      "term": "Financial Aid Offer",
+      "definition": "This is money to help you pay for the cost of attendance. A financial aid offer may include money you do and/or don’t need to pay back."
+    },
+    {
+      "term": "Free Application for Federal Student Aid (FAFSA)",
+      "definition": "This form helps colleges determine what you can afford on the basis of confidential information you and your family provide.  Students applying for any federal financial aid must file a FAFSA. "
+    },
+    {
+      "term": "Federal Pell Grant",
+      "definition": "Financial aid or funding awarded solely based on your financial need."
+    },
+    {
+      "term": "Full Time Enrollment",
+      "definition": "The proportion of undergraduate degree/certificate-seeking students enrolled in the fall that are enrolled in a full-time course load. Full-time status is defined as 12 or more credit hours or 24 or more clock hours."
+    },
+    {
+      "term": "Graduation Rate",
+      "definition": "Graduation rate is presented differently for degree granting and non-degree granting schools.   The graduation rate for degree granting schools is the proportion of entering students that graduated at this school within 8 years of entry, regardless of their full-time/part-time status or prior postsecondary experience. Graduation is measured 8 years after entry, irrespective of the award sought or award obtained.     The graduation rate for non-degree granting schools is the proportion of full-time, first-time students that have graduated at the same school where they started college within 200% of normal program completion time (e.g., within 8 years for a bachelor's degree, or within 18 months for a 9-month certificate)."
+    },
+    {
+      "term": "Income-based Repayment plan",
+      "definition": "An income-based repayment plan will change the loan payment amount based on your actual income, which could protect you if you are ever unemployed or are not able to earn what you anticipated. The U.S. Department of Education recommends an income-based repayment plan."
+    },
+    {
+      "term": "Other Expenses (Indirect Costs)",
+      "definition": "Indirect costs are educational costs you will need to pay--like books and supplies, travel, and personal expenses such as laundry, snacks, and entertainment. Indirect costs can vary based on your choices (e.g., buying used v. new books, late night pizza every night)."
+    },
+    {
+      "term": "In-state Residency",
+      "definition": "Requires a person to have an established physical presence in the state for at least a year."
+    },
+    {
+      "term": "Institutional Grant or Scholarship ",
+      "definition": "This is aid or money you’ll receive from the college directly.  It is often available to incoming students or students in later years"
+    },
+    {
+      "term": "Lifetime Earnings",
+      "definition": "Total accumulated earnings over 50 years from age 20 to age 69.  Earnings includes wage or salary income, net income (gross receipts minus expenses) from nonfarm and farm self-employment, Armed Forces pay, commissions, tips, piece-rate payments, and cash bonuses. Earnings represent the amount of income received regularly before deductions for personal income taxes, Social Security, bond purchases, union dues, Medicare deductions, etc."
+    },
+    {
+      "term": "Monthly Income ",
+      "definition": "The amount of money and individual earns monthly.  Money Income is income received on a regular basis (exclusive of certain money receipts such as capital gains and lump-sum payments) before payments for personal income taxes, social security, union dues, medicare deductions, etc. It includes income received from wages, salary, commissions, bonuses, and tips; self-employment income from own nonfarm or farm businesses, including proprietorships and partnerships; interest, dividends, net rental income, royalty income, or income from estates and trusts; Social Security or Railroad Retirement income; Supplemental Security Income (SSI); any cash public assistance or welfare payments from the state or local welfare office; retirement, survivor, or disability benefits; and any other sources of income received regularly such as Veterans' (VA) payments, unemployment and/or worker’s compensation, child support, and alimony."
+    },
+    {
+      "term": "Monthly Living Expense ",
+      "definition": "The monthly cost of living, e.g., housing, food, transportation, child care, health care, loans, and other necessities."
+    },
+    {
+      "term": "Open Admission",
+      "definition": "All qualifying students with a high school degree or GED may apply to enter the college without additional qualifications or performance requirements."
+    },
+    {
+      "term": "Out of Pocket Payment",
+      "definition": "You choose this amount. This is the amount you and your family can pay for college without loans (e.g., from personal savings, gifts, or by working while in school). The maximum is the estimated cost you need to cover, which can include loans."
+    },
+    {
+      "term": "Out of State Tuition",
+      "definition": "The cost of tuition for students coming from outside the state, including international students, to attend a public state school."
+    },
+    {
+      "term": "Part Time Enrollment",
+      "definition": "Part-time assumes you take approximately 6 credits (2-3 courses) per semester. Part-time means you will generally take longer to earn your degree (sometimes up to twice as long), which could cost more or increase the risk of not completing."
+    },
+    {
+      "term": "Post 9/11 G.I. Bill Benefits",
+      "definition": "May provide payment for full tuition & fees, a monthly housing allowanc, and up to $1,000 a year to use for books and supplies for college attendance."
+    },
+    {
+      "term": "Private Loans",
+      "definition": "Private loans are any monies borrowed from sources other than the federal government (e.g., from banks or credit card companies). It is recommended you borrow federal loans first."
+    },
+    {
+      "term": "Retirement Age",
+      "definition": "The age at which an individual stops working or are eligible for Social Security.  Most people retire at 66. The greater the number of  expected working years, the more time to earn back your investment in college."
+    },
+    {
+      "term": "Return on Investment",
+      "definition": "Return On Investment (ROI) is calculated based on the total cost of education and anticipated future earnings with a college degree compared to earnings with only a high school diploma."
+    },
+    {
+      "term": "Room & Board",
+      "definition": "The estimated cost to live either on or off-campus and eat breakfast, lunch, and dinner usually called a  meal plan. The charges for room and board may vary based on your housing decisions such as single-room or  shared-room, number of meals selected in meal plan)."
+    },
+    {
+      "term": "SAT Combined Score",
+      "definition": "A standardized test widely used for college admissions in the United States."
+    },
+    {
+      "term": "Standard Loan Repayment",
+      "definition": "The standard loan repayment plan has the same payment each month regardless of your income. "
+    },
+    {
+      "term": "Starting Annual Salary",
+      "definition": "The amount of money that an individual is paid as a new employee to perform a particular job."
+    },
+    {
+      "term": "State Grant",
+      "definition": "This is aid received from your home state for attending a college or university in your home state. "
+    },
+    {
+      "term": "Student Loan Payment ",
+      "definition": "Money borrowed from the government or a private lender in order to pay for college.  The loan has to be paid back later along with interest that builds up over time."
+    },
+    {
+      "term": "Subsidized Loan",
+      "definition": "Interest is paid by the Education Department while a student is enrolled at least half time in college."
+    },
+    {
+      "term": "Tuition & Fees",
+      "definition": "This is the price of the classes you will take and other mandatory costs of campus life.  "
+    },
+    {
+      "term": "Unsubsidized Loan",
+      "definition": "Interest begins accruing as soon as the loan is disbursed, including while students are enrolled in school."
+    }
+  ]

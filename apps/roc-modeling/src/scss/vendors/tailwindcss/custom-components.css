@@ -1,0 +1,9 @@
+/* add custom component classes here */
+.full-bleed-mat-dialog .mat-dialog-container {
+  @apply p-0;
+}
+
+button.mat-button,
+button.mat-icon-button {
+  @apply outline-none;
+}

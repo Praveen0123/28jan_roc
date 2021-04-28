@@ -1,0 +1,43 @@
+scalar Date
+
+type UserProfile @key(fields: "id")
+{
+  id: ID!
+  emailAddress: String!
+  firstName: String
+  lastName: String
+  fullName: String
+  userType: UserType
+  highSchoolId: ID
+  hasCompletedOnboarding: Boolean!
+}
+
+extend type Query
+{
+  userById(id: ID!): UserProfile
+  userByIdOrDefault(id: ID!, defaultUserProfile: UserProfileInput!): UserProfile
+}
+
+input UserProfileInput
+{
+  id: ID!
+  emailAddress: String!
+  firstName: String
+  lastName: String
+  userType: UserType
+  highSchoolId: ID
+  hasCompletedOnboarding: Boolean!
+}
+
+enum UserType
+{
+  STUDENT
+  COUNSELOR
+  PARENT
+  OTHER
+}
+
+extend type Mutation
+{
+  saveUserProfile(userProfileInput: UserProfileInput): UserProfile
+}

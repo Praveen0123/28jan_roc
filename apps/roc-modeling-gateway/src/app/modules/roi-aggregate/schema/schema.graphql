@@ -1,0 +1,81 @@
+scalar GraphQLJSON
+scalar Date
+
+
+type RoiAggregateModel @key(fields: "roiAggregateId")
+{
+  tenantId: ID!
+  roiAggregateId: ID!
+  roiAggregateName: String!
+  roiAggregate: GraphQLJSON!
+  updatedAt: Date!
+  shareHistory:[SharedHistoryModel]
+}
+
+type RoiAggregateCardModel @key(fields: "roiAggregateId")
+{
+  tenantId: ID!
+  roiAggregateId: ID!
+  roiAggregateName: String!
+  updatedAt: Date!
+  institutionList:[InstitutionModel]
+  shareHistory:[SharedHistoryModel]
+  modelCount: Int
+}
+
+type InstitutionModel
+{
+  name: String!
+}
+
+type SharedHistoryModel
+{
+  sharedFromUserId: ID!
+  sharedFromUserName: String!
+  sharedWithUserId: ID!
+  sharedWithUserName: String!
+  sharedAt: Date!
+}
+
+
+extend type Query
+{
+  getRoiAggregate(tenantId: ID!, userId: ID!, roiAggregateId: ID!): RoiAggregateModel
+  getRoiAggregateMostRecent(tenantId: ID!, userId: ID!, defaultRoiAggregate: RoiAggregateInput!): RoiAggregateModel
+
+  getRoiAggregateListAll(tenantId: ID!, userId: ID!): [RoiAggregateCardModel]
+  getRoiAggregateListBySearchTerm(tenantId: ID!, userId: ID!, searchTerm: String!): [RoiAggregateCardModel]
+  getRoiAggregateListMostRecent(tenantId: ID!, userId: ID!): [RoiAggregateCardModel]
+  getRoiAggregateListSharedFrom(tenantId: ID!, userId: ID!): [RoiAggregateCardModel]
+  getRoiAggregateListSharedWith(tenantId: ID!, userId: ID!): [RoiAggregateCardModel]
+}
+
+
+input RoiAggregateInput
+{
+  tenantId: ID!
+  userId: ID!
+  roiAggregateId: ID!
+  roiAggregateName: String!
+  roiAggregate: GraphQLJSON!
+}
+
+input ShareInput
+{
+  tenantId: ID!
+  tenantHostName: String!
+  sharedFromUserId: ID!
+  sharedFromUserName: ID!
+  firstName: String!
+  lastName: String!
+  emailAddress: String!
+  userType: UserType!
+  roiAggregateId: ID!
+}
+
+extend type Mutation
+{
+  saveRoiAggregate(roiAggregateInput: RoiAggregateInput!): RoiAggregateModel
+  share(shareInput: ShareInput!): RoiAggregateModel
+  deleteRoiAggregate(roiAggregateId: String!): Boolean
+}

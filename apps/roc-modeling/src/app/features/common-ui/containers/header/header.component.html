@@ -1,0 +1,92 @@
+<ng-container *ngIf="{
+    compareCount: compareCount$ | async
+  } as data">
+
+
+  <header>
+    <section class="flex">
+
+      <!-- LOGO -->
+      <div class="flex-shrink">
+
+        <section class="flex items-center h-16">
+
+          <div class="flex-none">
+            <a routerLink="/">
+              <img class="block w-auto h-12"
+                   src="/assets/images/logos/roc_logo_white.svg"
+                   alt="Return On College" />
+            </a>
+          </div>
+
+          <div class="flex-none text-xs font-bold text-white uppercase">
+            Roi Modeling Tool
+          </div>
+
+        </section>
+
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+      <div class="self-end flex-grow">
+
+        <nav mat-tab-nav-bar
+             mat-align-tabs="center">
+
+
+          <!-- ROI -->
+          <a mat-tab-link
+             routerLink="/modeling"
+             routerLinkActive="active"
+             class="h-16 link"
+             (click)="closeOffCanvasMenu()">
+
+            Return On Investment
+
+          </a>
+
+          <!-- COMPARE -->
+          <a mat-tab-link
+             routerLink="/compare-models"
+             routerLinkActive="active"
+             class="h-16 link"
+             (click)="closeOffCanvasMenu()">
+
+            <span [matBadge]="data.compareCount"
+                  matBadgeOverlap="false">Compare Models</span>
+          </a>
+
+          <!-- SEARCH -->
+          <a mat-tab-link
+             routerLink="/search"
+             routerLinkActive="active"
+             class="h-16 link"
+             (click)="closeOffCanvasMenu()">
+
+
+            Search Collections
+
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <!-- LOGOUT -->
+      <div class="self-end flex-shrink mr-10">
+
+        <roc-button-with-icon title="logout"
+                              fontSet="fal"
+                              fontIcon="sign-out-alt"
+                              class="saved-button"
+                              (onClick)="onLogout()"></roc-button-with-icon>
+
+      </div>
+
+    </section>
+  </header>
+
+</ng-container>

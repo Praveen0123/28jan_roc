@@ -1,0 +1,114 @@
+<section class="flex flex-col">
+  <div class="text-lg font-semibold">Total Return vs. Cost</div>
+  <div class="text-xs font-light">for {{data.modelName}}</div>
+
+
+  <div class="flex flex-col mt-3">
+
+
+
+    <!-- CURRENT STATE -->
+    <section *ngIf="roiSectionsVisibility.showCurrentState"
+             class="text-xs text-currentState-primary">
+      <div class="flex items-baseline justify-between">
+        <div class="self-start flex-none">
+          <svg viewBox="0 0 22 10"
+               class="inline-block w-4 h-3 rounded bg-currentState-secondary">
+            <line x1="0"
+                  y1="5"
+                  x2="22"
+                  y2="5"
+                  stroke="black"
+                  stroke-dasharray="4 2" />
+          </svg>
+        </div>
+        <div class="flex-auto max-w-lg mx-2">{{labelCurrentState}}</div>
+        <div class="flex-1 dot-trail"></div>
+        <div class="flex-none ml-2">{{ data.currentStateLifetimeEarningLower | money: 2 }} - {{ data.currentStateLifetimeEarningUpper | money: 2 }}</div>
+      </div>
+    </section>
+
+
+
+    <!-- FUTURE STATE -->
+    <section *ngIf="roiSectionsVisibility.showGoalState"
+             class="mt-2 text-xs text-goalState-primary">
+      <div class="flex items-baseline justify-between">
+        <div class="self-start flex-none">
+          <svg viewBox="0 0 22 10"
+               class="inline-block w-4 h-3 rounded bg-goalState-secondary">
+            <line x1="0"
+                  y1="5"
+                  x2="22"
+                  y2="5"
+                  stroke="black"
+                  stroke-dasharray="4 2" />
+          </svg>
+        </div>
+        <div class="flex-auto max-w-lg mx-2">{{labelFutureState}}</div>
+        <div class="flex-1 dot-trail"></div>
+        <div class="flex-none ml-2">{{ data.goalStateLifetimeEarningLower | money: 2 }} - {{ data.goalStateLifetimeEarningUpper | money: 2 }}</div>
+      </div>
+    </section>
+
+    <section *ngIf="roiSectionsVisibility.showLoanAccumulation"
+             class="mt-2 text-xs text-loanAccumulation-primary">
+      <div class="flex items-baseline justify-between">
+        <div class="self-start flex-none">
+          <svg viewBox="0 0 22 10"
+               class="inline-block w-4 h-3 rounded bg-loanAccumulation-secondary">
+            <line x1="0"
+                  y1="5"
+                  x2="22"
+                  y2="5"
+                  stroke="black"
+                  stroke-dasharray="4 2" />
+          </svg>
+        </div>
+        <div class="flex-none mx-2">Total Investment</div>
+        <div class="flex-1 dot-trail"></div>
+        <div class="flex-none ml-2">{{ data.investmentLower | money: 2 }} - {{ data.investmentUpper | money: 2 }}</div>
+      </div>
+    </section>
+
+    <!-- <div *ngIf="roiSectionsVisibility.showLoanPayoff"
+         class="flex mt-2 text-xs text-loanPayoff-primary">
+      <svg viewBox="0 0 22 10"
+           class="w-4 h-3 mt-1 rounded bg-loanPayoff-secondary">
+        <line x1="0"
+              y1="5"
+              x2="22"
+              y2="5"
+              stroke="black"
+              stroke-dasharray="4 2" />
+      </svg>
+      <span class="flex ">
+        <span class="flex-shrink-0 mx-1"
+              style="width: 9.5rem;">Tuition & Fees paid with loans + interests Payment Costs</span>
+        <span class="dot-trail"></span>
+      </span>
+      <span class="ml-2">
+        {{ data.cumulativeNetPricePlusLoanInterest | money: 2 }}</span>
+    </div> -->
+  </div>
+
+  <section *ngIf="roiSectionsVisibility.showLoanAccumulation"
+           class="mt-4 text-xs font-semibold leading-8 text-white bg-gray-700">
+    <div class="flex items-baseline justify-between">
+      <div class="flex-none mx-2">Est. Total Lifetime ROI</div>
+      <div class="flex-1 dot-trail"></div>
+      <div class="flex-none ml-2">{{ data.lifeRoiLower | money: 2 }} - {{ data.lifeRoiUpper | money: 2 }}</div>
+      <div class="flex-none px-2 m-2 mr-4 leading-tight text-gray-700 bg-white rounded-lg">{{ data.lifeRoiPercentLower / 100 | percent }} - {{ data.lifeRoiPercentUpper / 100 | percent }}</div>
+    </div>
+  </section>
+
+  <section *ngIf="roiSectionsVisibility.showLoanAccumulation"
+           class="text-xs font-semibold leading-8">
+    <div class="flex items-baseline justify-between">
+      <div class="flex-none mx-2">Est. Annual ROI</div>
+      <div class="flex-1 dot-trail"></div>
+      <div class="flex-none ml-2 mr-6">{{ data.annualizedRoiPercentLower / 100 | percent }} - {{ data.annualizedRoiPercentUpper / 100 | percent }}</div>
+    </div>
+  </section>
+
+</section>

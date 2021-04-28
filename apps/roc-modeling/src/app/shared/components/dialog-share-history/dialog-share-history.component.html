@@ -1,0 +1,47 @@
+<ng-container *ngIf="{
+    sharedHistoryDialoModel: sharedHistoryDialoModel$ |async
+  } as data">
+
+
+  <section mat-dialog-content
+           class="my-3"
+           *ngIf="(data.sharedHistoryDialoModel && data.sharedHistoryDialoModel.shareHistory); else placeholder">
+
+
+    <h2 class="mb-2 text-lg font-semibold">{{data.sharedHistoryDialoModel.roiAggregateName}} Share History</h2>
+
+    <ul class="list-disc">
+
+      <li *ngFor="let item of data.sharedHistoryDialoModel.shareHistory">
+        on <span class="italic">{{item.sharedAt | date:'shortDate'}}, </span> <span class="capitalize">{{item.sharedFromUserName}}</span> shared with <span class="capitalize">{{item.sharedWithUserName}}</span>
+      </li>
+
+    </ul>
+
+
+
+  </section>
+
+  <section mat-dialog-actions>
+
+    <section class="flex justify-between w-full">
+
+      <div class="flex-1">
+
+        <roc-button-with-icon [fontSet]="'fas'"
+                              [fontIcon]="'times'"
+                              title='Cancel'
+                              (onClick)="onCancelClick()"></roc-button-with-icon>
+
+      </div>
+
+    </section>
+
+  </section>
+
+
+  <ng-template #placeholder>
+    {{data.sharedHistoryDialoModel.roiAggregateName}} has not been shared
+  </ng-template>
+
+</ng-container>

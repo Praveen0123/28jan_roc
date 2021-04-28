@@ -1,0 +1,342 @@
+<!-- HEADIND -->
+<roc-lib-dialog-title [title]="'Feedback Form'"></roc-lib-dialog-title>
+
+<section class="flex">
+  <!-- SUB HEADIND -->
+  <div class="w-4/5 mt-2 font-normal">
+    <span>Thank you for using Return on College. Please fill out the form and click on the Send button. We appreciate all questions and feedback.</span>
+  </div>
+
+
+</section>
+<section class="mt-5">
+
+  <!-- DROPDOWN SELECTION FOR FEEDBACK FORM -->
+  <div>
+    <h3 class="font-semibold ">What is the feedback about?</h3>
+    <mat-form-field class="w-64 text-lg"
+                    appearance="outline">
+
+      <mat-select (selectionChange)="
+                feedbackSelected($event.value)
+              "
+                  placeholder="Please Select">
+        <mat-option [value]="option"
+                    *ngFor="let option of feedbackFormAbout">{{ option }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- FIRST : APPLICATION DEFECT FORM -->
+  <section *ngIf="feedbackSelectedValue == 'Application defect'">
+    <form [formGroup]="applicationDefectForm">
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold">Your Name <span class="font-bold text-red-600">*</span></h3>
+
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="applicationDefectYourName">
+
+            <mat-error *ngIf="applicationDefectForm.controls.applicationDefectYourName.hasError('required')
+                          || (applicationDefectForm.controls.applicationDefectYourName.invalid && applicationDefectForm.controls.applicationDefectYourName.touched)">
+              Please enter your name.
+            </mat-error>
+
+
+          </mat-form-field>
+        </div>
+
+        <div class="flex-4">
+          <h3 class="font-semibold">Email Address <span class="font-bold text-red-600">*</span></h3>
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="applicationDefectemail">
+
+            <mat-error *ngIf="applicationDefectForm.controls.applicationDefectemail.hasError('required')
+                          || (applicationDefectForm.controls.applicationDefectemail.invalid && applicationDefectForm.controls.applicationDefectemail.touched)">
+              Please enter a valid email address.
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="w-5/6 flex-4">
+        <h3 class="font-semibold">Please provide a detailed description of the steps taken that produced the defect <span class="font-bold text-red-600">*</span></h3>
+        <mat-form-field class="w-full"
+                        appearance="outline">
+
+          <textarea matInput
+                    required
+                    formControlName="applicationDefectdescription"></textarea>
+          <mat-error *ngIf="applicationDefectForm.controls.applicationDefectdescription.hasError('required')
+                          || (applicationDefectForm.controls.applicationDefectdescription.invalid && applicationDefectForm.controls.applicationDefectdescription.touched)">
+            Please enter your description.
+          </mat-error>
+
+
+        </mat-form-field>
+      </div>
+      <div class="w-5/6 flex-4">
+        <h3 class="font-semibold">Describe the error encountered or copy/paste error code <span class="font-bold text-red-600">*</span></h3>
+        <mat-form-field class="w-full"
+                        appearance="outline">
+
+          <textarea matInput
+                    required
+                    formControlName="applicationDefectErrorCode"></textarea>
+
+          <mat-error *ngIf="applicationDefectForm.controls.applicationDefectErrorCode.hasError('required')
+                          || (applicationDefectForm.controls.applicationDefectErrorCode.invalid && applicationDefectForm.controls.applicationDefectErrorCode.touched)">
+            Please enter your error code description.
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold"><span class="font-bold text-red-600">* </span> Required Field</h3>
+
+        </div>
+
+        <div class="ml-20 flex-4">
+          <button class="content-end px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 ml-80"
+                  (click)="applicationFormSubmit()">
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- SECOND : SUGGESTION FORM -->
+  <section class="relative mt-5"
+           *ngIf="feedbackSelectedValue == 'Suggestion'">
+    <form [formGroup]="suggestionForm">
+
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold">Your Name <span class="font-bold text-red-600">*</span></h3>
+
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="suggestionYourName">
+
+            <mat-error *ngIf="suggestionForm.controls.suggestionYourName.hasError('required')
+                          || (suggestionForm.controls.suggestionYourName.invalid && suggestionForm.controls.suggestionYourName.touched)">
+              Please enter your name.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="flex-4">
+          <h3 class="font-semibold">Email Address <span class="font-bold text-red-600">*</span></h3>
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="suggestionEmail">
+
+            <mat-error *ngIf="suggestionForm.controls.suggestionEmail.hasError('required')
+                          || (suggestionForm.controls.suggestionEmail.invalid && suggestionForm.controls.suggestionEmail.touched)">
+              Please enter a valid email address.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="w-5/6 flex-4">
+        <h3 class="font-semibold">Please provide your suggestion <span class="font-bold text-red-600">*</span></h3>
+        <mat-form-field class="w-full"
+                        appearance="outline">
+
+          <textarea matInput
+                    required
+                    formControlName="suggestion"></textarea>
+          <mat-error *ngIf="suggestionForm.controls.suggestion.hasError('required')
+                          || (suggestionForm.controls.suggestion.invalid && suggestionForm.controls.suggestion.touched)">
+            Please enter suggestion.
+          </mat-error>
+
+
+        </mat-form-field>
+      </div>
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold"><span class="font-bold text-red-600">* </span> Required Field</h3>
+
+        </div>
+
+        <div class="ml-20 flex-4">
+          <button class="content-end px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 ml-80"
+                  (click)="applicationFormSubmit()">
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- THIRD : COMPLIMENT FORM -->
+  <section class="relative mt-5"
+           *ngIf="feedbackSelectedValue == 'Compliment'">
+    <form [formGroup]="complimentForm">
+
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold">Your Name <span class="font-bold text-red-600">*</span></h3>
+
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="complimentYourName">
+            <mat-error *ngIf="complimentForm.controls.complimentYourName.hasError('required')
+                          || (complimentForm.controls.complimentYourName.invalid && complimentForm.controls.complimentYourName.touched)">
+              Please enter your name.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <div class="flex-4">
+          <h3 class="font-semibold">Email Address <span class="font-bold text-red-600">*</span></h3>
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="complimentEmail">
+            <mat-error *ngIf="complimentForm.controls.complimentEmail.hasError('required')
+                          || (complimentForm.controls.complimentEmail.invalid && complimentForm.controls.complimentEmail.touched)">
+              Please enter valid email address.
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="w-5/6 flex-4">
+        <h3 class="font-semibold">Please share a positive experience of what you liked <span class="font-bold text-red-600">*</span></h3>
+        <mat-form-field class="w-full"
+                        appearance="outline">
+
+          <textarea rows="3"
+                    matInput
+                    required
+                    formControlName="positiveExperience"></textarea>
+          <mat-error *ngIf="complimentForm.controls.positiveExperience.hasError('required')
+                          || (complimentForm.controls.positiveExperience.invalid && complimentForm.controls.positiveExperience.touched)">
+            Please enter positive experience
+          </mat-error>
+
+
+        </mat-form-field>
+      </div>
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold"><span class="font-bold text-red-600">* </span> Required Field</h3>
+
+        </div>
+
+        <div class="ml-20 flex-4">
+          <button class="content-end px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 ml-80"
+                  (click)="applicationFormSubmit()">
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOURTH : GENERAL QUESTION FORM -->
+  <section class="relative mt-5"
+           *ngIf="feedbackSelectedValue == 'General Question'">
+    <form [formGroup]="generalQuestionForm">
+
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold">Your Name <span class="font-bold text-red-600">*</span></h3>
+
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="generalQuestionyourName">
+
+            <mat-error *ngIf="generalQuestionForm.controls.generalQuestionyourName.hasError('required')
+                          || (generalQuestionForm.controls.generalQuestionyourName.invalid && generalQuestionForm.controls.generalQuestionyourName.touched)">
+              Please enter your name
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="flex-4">
+          <h3 class="font-semibold">Email Address <span class="font-bold text-red-600">*</span></h3>
+          <mat-form-field class="w-72"
+                          appearance="outline">
+
+            <input matInput
+                   placeholder=""
+                   required
+                   formControlName="generalQuestionGmail">
+            <mat-error *ngIf="generalQuestionForm.controls.generalQuestionGmail.hasError('required')
+                          || (generalQuestionForm.controls.generalQuestionGmail.invalid && generalQuestionForm.controls.generalQuestionGmail.touched)">
+              Please enter vaild email address
+            </mat-error>
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="w-5/6 flex-4">
+        <h3 class="font-semibold">Please provide your question <span class="font-bold text-red-600">*</span></h3>
+        <mat-form-field class="w-full"
+                        appearance="outline">
+
+          <textarea rows="3"
+                    matInput
+                    required
+                    formControlName="provideYouQuestion"></textarea>
+
+          <mat-error *ngIf="generalQuestionForm.controls.provideYouQuestion.hasError('required')
+                          || (generalQuestionForm.controls.provideYouQuestion.invalid && generalQuestionForm.controls.provideYouQuestion.touched)">
+            Please enter question
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+      <div class="grid grid-flow-col grid-rows-1 gap-2">
+        <div class="flex-4">
+          <h3 class="font-semibold"><span class="font-bold text-red-600">* </span> Required Field</h3>
+
+        </div>
+
+        <div class="ml-20 flex-4">
+          <button class="content-end px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 ml-80"
+                  (click)="applicationFormSubmit()">
+            Send
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+</section>

@@ -1,0 +1,31 @@
+<ng-container *ngIf="{
+    releaseList: releaseList$ | async
+  } as data">
+
+  <roc-lib-dialog-title [title]="'Release Schedule'"></roc-lib-dialog-title>
+
+
+  <mat-dialog-content>
+
+
+    <!-- HORIZONTAL LINE -->
+    <div class="mt-2 border-t-2 border-blue-400"></div>
+
+    <!-- Description  -->
+    <div class="flex py-4">
+      <span class="text-base text-gray-400"> Here is an overview of our plans for the ReturnOn.College product </span>
+    </div>
+
+
+    <!-- Version History : Section -->
+    <ng-container *ngFor="let item of data.releaseList">
+
+      <roc-lib-release-schedule-item [releaseScheduleModel]="item"></roc-lib-release-schedule-item>
+
+    </ng-container>
+
+
+
+  </mat-dialog-content>
+
+</ng-container>

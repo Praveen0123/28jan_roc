@@ -1,0 +1,68 @@
+<ng-container *ngIf="roiModelDto">
+
+  <section class="flex justify-end align-bottom">
+
+    <!-- AGGREGATE/COLLECTION NAME   -->
+    <div class="flex-1">
+
+      <section class="flex items-center content-center">
+
+        <div class="flex-shrink">
+
+          <button mat-icon-button
+                  (click)="onRename()">
+
+            <fa-icon class="text-sm"
+                     [icon]="['fas', 'pencil-alt']"></fa-icon>
+
+          </button>
+
+        </div>
+
+        <div class="flex-shrink">
+
+          <h2 class="pb-2 text-2xl font-semibold text-gray-400 text-blue-700">
+            {{roiModelDto.roiAggregateName}}
+          </h2>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- CTAs -->
+    <div class="flex-none">
+
+      <roc-collection-call-to-action [roiAggregateId]="roiModelDto.roiAggregateId"
+                                     [roiAggregateName]="roiModelDto.roiAggregateName"
+                                     [isAddModelToAggregateAvailable]="true"></roc-collection-call-to-action>
+
+    </div>
+
+
+    <!-- MODELS -->
+    <div class="flex-none mr-6">
+
+      <roc-button-with-icon [fontSet]="'fas'"
+                            [fontIcon]="'bookmark'"
+                            (onClick)="onShowSaved()">
+
+        <span>
+          Models
+
+          <span [matBadge]="roiModelCount"
+                class="text-white"
+                matBadgeOverlap="false"></span>
+
+        </span>
+
+      </roc-button-with-icon>
+
+    </div>
+
+
+  </section>
+</ng-container>

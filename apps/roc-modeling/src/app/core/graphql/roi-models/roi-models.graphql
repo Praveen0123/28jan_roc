@@ -1,0 +1,116 @@
+mutation deleteRoiAggregate($roiAggregateId: String!)
+{
+  deleteRoiAggregate(roiAggregateId: $roiAggregateId)
+}
+
+mutation saveRoiAggregate($roiAggregateInput: RoiAggregateInput!)
+{
+  saveRoiAggregate(roiAggregateInput: $roiAggregateInput)
+  {
+    ...roiAggregateFragment
+  }
+}
+
+mutation shareAggregate($shareInput: ShareInput!)
+{
+  share(shareInput: $shareInput)
+  {
+    ...roiAggregateFragment
+  }
+}
+
+query getRoiAggregate($tenantId:ID!, $userId:ID!, $roiAggregateId:ID!)
+{
+  getRoiAggregate(tenantId: $tenantId, userId: $userId, roiAggregateId: $roiAggregateId)
+  {
+    ...roiAggregateFragment
+  }
+}
+
+query getRoiAggregateMostRecent($tenantId:ID!, $userId:ID!, $defaultRoiAggregate: RoiAggregateInput!)
+{
+  getRoiAggregateMostRecent(tenantId: $tenantId, userId: $userId, defaultRoiAggregate: $defaultRoiAggregate)
+  {
+    ...roiAggregateFragment
+  }
+}
+
+
+query getRoiAggregateListAll($tenantId:ID!, $userId:ID!)
+{
+  getRoiAggregateListAll(tenantId: $tenantId, userId: $userId)
+  {
+    ...roiAggregateCardFragment
+  }
+}
+
+query getRoiAggregateListBySearchTerm($tenantId:ID!, $userId:ID!, $searchTerm: String!)
+{
+  getRoiAggregateListBySearchTerm(tenantId: $tenantId, userId: $userId, searchTerm: $searchTerm)
+  {
+    ...roiAggregateCardFragment
+  }
+}
+
+query getRoiAggregateListMostRecent($tenantId:ID!, $userId:ID!)
+{
+  getRoiAggregateListMostRecent(tenantId: $tenantId, userId: $userId)
+  {
+    ...roiAggregateCardFragment
+  }
+}
+
+query getRoiAggregateListSharedFrom($tenantId:ID!, $userId:ID!)
+{
+  getRoiAggregateListSharedFrom(tenantId: $tenantId, userId: $userId)
+  {
+    ...roiAggregateCardFragment
+  }
+}
+
+query getRoiAggregateListSharedWith($tenantId:ID!, $userId:ID!)
+{
+  getRoiAggregateListSharedWith(tenantId: $tenantId, userId: $userId)
+  {
+    ...roiAggregateCardFragment
+  }
+}
+
+
+fragment roiAggregateFragment on RoiAggregateModel
+{
+    tenantId
+    roiAggregateId
+    roiAggregateName
+    roiAggregate
+    updatedAt
+    shareHistory
+    {
+			sharedFromUserId
+      sharedFromUserName
+      sharedWithUserId
+      sharedWithUserName
+      sharedAt
+    }
+}
+
+fragment roiAggregateCardFragment on RoiAggregateCardModel
+{
+    tenantId
+    roiAggregateId
+    roiAggregateName
+    updatedAt
+    institutionList
+    {
+      name
+    }
+    shareHistory
+    {
+			sharedFromUserId
+      sharedFromUserName
+      sharedWithUserId
+      sharedWithUserName
+      sharedAt
+    }
+    modelCount
+}

@@ -1,0 +1,79 @@
+<section class="flex justify-center border">
+
+  <div class="flex-auto py-4 pl-14 pr-7">
+
+    <section class="grid h-full text-center place-content-center">
+
+      <mat-button-toggle-group [vertical]="true"
+                               #group="matButtonToggleGroup">
+
+        <mat-button-toggle [checked]="isAllMyCollectionsActive"
+                           (click)="onRequestAllCollections()">
+          All of my collections
+        </mat-button-toggle>
+
+
+        <mat-button-toggle [checked]="isMostRecentCollectionsActive"
+                           (click)="onRequestMostRecentCollections()">
+          My most recent collections
+        </mat-button-toggle>
+
+
+        <mat-button-toggle [checked]="isSharedFromCollectionsActive"
+                           (click)="onRequestSharedFromCollections()">
+          Collections I've sharerd
+        </mat-button-toggle>
+
+
+        <mat-button-toggle [checked]="isSharedWithCollectionsActive"
+                           (click)="onRequestSharedWithCollections()">
+          Collections shared with me
+        </mat-button-toggle>
+
+      </mat-button-toggle-group>
+
+    </section>
+
+  </div>
+
+
+  <div class="flex-auto py-5 pl-7 pr-14">
+
+    <section class="grid h-full place-content-center">
+
+      <form [formGroup]="formGroup"
+            autocomplete="chrome-off"
+            autocomplete="off">
+
+        <mat-form-field appearance="standard"
+                        class="w-full">
+          <mat-label>search term</mat-label>
+          <input matInput
+                 placeholder="search term"
+                 autocomplete="chrome-off"
+                 autocomplete="no"
+                 formControlName="searchTerm">
+
+          <a *ngIf="formGroup.controls.searchTerm.value"
+             matSuffix
+             mat-icon-button
+             aria-label="Clear"
+             (click)="clearSearchTermValue()">
+            <mat-icon>close</mat-icon>
+          </a>
+
+        </mat-form-field>
+
+        <roc-button-with-icon [fontSet]="'fas'"
+                              [fontIcon]="'search'"
+                              title='Search'
+                              (onClick)="onSearchClick()"></roc-button-with-icon>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+</section>
